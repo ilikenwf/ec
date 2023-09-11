@@ -63,7 +63,7 @@ int16_t battery_charger_configure(void) {
         // - AC is not plugged in, or
         // - Battery is fully charged
         should_charge = false;
-    } else if (battery_info.charge > battery_get_end_threshold()) {
+    } else if (battery_info.charge >= battery_get_end_threshold()) {
         // Stop threshold configured: Stop charging at threshold.
         should_charge = false;
     } else if (battery_get_start_threshold() == BATTERY_START_DEFAULT) {
